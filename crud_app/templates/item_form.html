@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang=>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Item form</title>
+</head>
+<body>
+<h1>{% if item  %}Update Item {% else %}Create Item {% endif %}</h1>
+
+<form action="" method="post">
+
+    {% csrf_token   %}
+
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+    <br>
+
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="10" ></textarea>
+
+
+    <br>
+
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'item_list' %}">Back to List</a>
+</body>
+</html>

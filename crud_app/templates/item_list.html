@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Item List</title>
+</head>
+<body>
+<h1>Item List</h1>
+
+<a href="{% url 'create_item' %}">Add new Item</a>
+
+<ul>
+    {% for item in Items %}
+    <li>
+        {{ items.name }}
+        <a href="{% url 'update_item' item.pk %}"></a>
+        <a href="{% url 'delete_item' item.pk %}"></a>
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
